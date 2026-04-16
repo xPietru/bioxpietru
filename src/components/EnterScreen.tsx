@@ -9,13 +9,13 @@ export const EnterScreen = ({ onEnter, show }: { onEnter: () => void, show: bool
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black cursor-pointer"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-black cursor-pointer"
           onClick={onEnter}
         >
           <motion.div
             animate={{ opacity: [0.3, 1, 0.3] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-            className="text-white font-mono text-sm tracking-[0.3em] uppercase hover:text-red-500 transition-colors duration-300"
+            className="text-slate-900 dark:text-white font-mono text-sm tracking-[0.3em] uppercase hover:text-red-500 transition-colors duration-300"
           >
             [ click to enter ]
           </motion.div>

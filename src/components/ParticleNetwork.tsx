@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-export const ParticleNetwork = () => {
+export const ParticleNetwork = ({ isDark = true }: { isDark?: boolean }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -92,7 +92,7 @@ export const ParticleNetwork = () => {
         }
 
         // Draw dot
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+        ctx.fillStyle = isDark ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.4)';
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
@@ -107,7 +107,7 @@ export const ParticleNetwork = () => {
       window.removeEventListener('mouseout', handleMouseLeave);
       cancelAnimationFrame(animationId);
     };
-  }, []);
+  }, [isDark]);
 
   // z-[1] ensures it is behind the card (which is in a z-10 container)
   return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-[1]" />;

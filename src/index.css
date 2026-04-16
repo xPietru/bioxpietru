@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;600;700&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
 body {
-  background-color: #000;
-  color: #fff;
   cursor: crosshair;
 }
 
@@ -30,6 +30,16 @@ a, button {
   pointer-events: none;
   z-index: 9999;
   opacity: 0.6;
+}
+
+.dark .scanlines {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.2)
+  );
 }
 
 .crt-flicker {
@@ -57,7 +67,7 @@ a, button {
   100% { height: 12px; }
 }
 
-/* Glitch Hover Effect */
+/* Light mode overrides for glitch */
 .glitch-hover {
   position: relative;
   transition: all 0.2s ease;
@@ -65,8 +75,11 @@ a, button {
 
 .glitch-hover:hover {
   animation: glitch-skew 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-  color: #fff;
   text-shadow: 2px 2px #ff003c, -2px -2px #00e6f6;
+}
+
+.dark .glitch-hover:hover {
+  color: #fff;
 }
 
 @keyframes glitch-skew {

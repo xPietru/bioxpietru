@@ -28,7 +28,7 @@ export const SocialLinks = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: i * 0.1 }}
-          className="flex-1 flex flex-col items-center justify-center gap-2 sm:gap-3 bg-black/50 hover:bg-white hover:text-black border border-white/10 rounded-lg py-4 sm:py-5 text-white/50 transition-all duration-300 group"
+          className="flex-1 flex flex-col items-center justify-center gap-2 sm:gap-3 bg-white/50 dark:bg-black/50 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black border border-black/10 dark:border-white/10 rounded-lg py-4 sm:py-5 text-slate-500 dark:text-white/50 transition-all duration-300 group"
         >
           <link.icon className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform duration-300" />
           <span className="text-[9px] sm:text-[10px] font-mono font-bold tracking-widest uppercase">{link.name}</span>

@@ -28,7 +28,7 @@ export const SpotifyWidget = ({ data }: { data: LanyardData }) => {
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="w-full bg-black/50 border border-white/10 rounded-lg p-3 flex items-center gap-3 sm:gap-4 hover:border-white/30 transition-colors"
+      className="w-full bg-white/50 dark:bg-black/50 border border-black/10 dark:border-white/10 rounded-lg p-3 flex items-center gap-3 sm:gap-4 hover:border-black/30 dark:hover:border-white/30 transition-colors"
     >
       <div className="relative h-14 w-14 flex-shrink-0 rounded overflow-hidden group">
         <img 
@@ -44,22 +44,22 @@ export const SpotifyWidget = ({ data }: { data: LanyardData }) => {
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-1">
           <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-          <span className="text-[10px] font-mono text-green-500 uppercase tracking-widest">Spotify</span>
+          <span className="text-[10px] font-mono text-green-600 dark:text-green-500 uppercase tracking-widest">Spotify</span>
           
           {/* Audio Visualizer */}
           <div className="flex items-end gap-[2px] h-3 ml-auto">
-            <div className="w-[3px] bg-green-500 rounded-sm visualizer-bar" />
-            <div className="w-[3px] bg-green-500 rounded-sm visualizer-bar" />
-            <div className="w-[3px] bg-green-500 rounded-sm visualizer-bar" />
-            <div className="w-[3px] bg-green-500 rounded-sm visualizer-bar" />
+            <div className="w-[3px] bg-green-600 dark:bg-green-500 rounded-sm visualizer-bar" />
+            <div className="w-[3px] bg-green-600 dark:bg-green-500 rounded-sm visualizer-bar" />
+            <div className="w-[3px] bg-green-600 dark:bg-green-500 rounded-sm visualizer-bar" />
+            <div className="w-[3px] bg-green-600 dark:bg-green-500 rounded-sm visualizer-bar" />
           </div>
         </div>
-        <h3 className="text-white font-bold truncate text-sm tracking-tight">{data.spotify.song}</h3>
-        <p className="text-white/50 text-xs truncate font-mono mt-0.5">{data.spotify.artist}</p>
+        <h3 className="text-slate-900 dark:text-white font-bold truncate text-sm tracking-tight">{data.spotify.song}</h3>
+        <p className="text-slate-500 dark:text-white/50 text-xs truncate font-mono mt-0.5">{data.spotify.artist}</p>
         
-        <div className="mt-3 h-[2px] w-full bg-white/10 overflow-hidden">
+        <div className="mt-3 h-[2px] w-full bg-black/10 dark:bg-white/10 overflow-hidden">
           <div 
-            className="h-full bg-white transition-all duration-1000 ease-linear"
+            className="h-full bg-slate-900 dark:bg-white transition-all duration-1000 ease-linear"
             style={{ width: `${progress}%` }}
           />
         </div>
