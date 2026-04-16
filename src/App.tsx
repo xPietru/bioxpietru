@@ -12,6 +12,7 @@ import { SpotifyWidget } from './components/SpotifyWidget';
 import { SocialLinks } from './components/SocialLinks';
 import { ParticleNetwork } from './components/ParticleNetwork';
 import { useLanyard } from './hooks/useLanyard';
+import { useTitleAnimation } from './hooks/useTitleAnimation';
 import { siteConfig } from './config';
 
 export default function App() {
@@ -24,6 +25,8 @@ export default function App() {
     }
     return true;
   });
+
+  useTitleAnimation(siteConfig.browserTitle || 'xPietru');
 
   useEffect(() => {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');

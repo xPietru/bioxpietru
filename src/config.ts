@@ -2,6 +2,9 @@ export const siteConfig = {
   // Your Discord ID (used to fetch your status, Spotify, and games)
   discordId: '1116051184558559252',
 
+  // The text that will animate in the browser tab title
+  browserTitle: 'xPietru',
+
   // The title of your card (leave empty to use your Discord username)
   cardTitle: '',
 
